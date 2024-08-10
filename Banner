@@ -1,0 +1,40 @@
+import React from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+
+const Banner = () => {
+    return (
+        <div draggable="false" className='relative mx-4'>
+            <div className=' w-full absolute h-32 bg-gradient-to-t from-green-100 to-transparent bottom-0 z-0'/>
+            <Carousel 
+            // set width from css this is hard to be responsive 
+            autoPlay
+            infiniteLoop={false}
+            centerMode={true}
+            centerSlidePercentage={80}
+            showIndicators={false}
+            showStatus={false}
+            showThumbs={true}
+            interval={5000}
+            emulateTouch={true}
+            swipeable={true}
+            onClickItem={(index, item) => console.log(`Item ${index} clicked!`)}
+            onClickThumb={(index, item) => console.log(`thumb ${index} clicked!`)}
+
+            >
+                <div draggable="false" >
+                    <img loading='lazy' src="https://links.papareact.com/gi1" alt="loading" draggable="false"/>
+                </div>
+                <div draggable="false" className='ml-2' >
+                    <img loading='lazy' src="https://links.papareact.com/6ff" alt="loading" draggable="false"/>
+                </div>
+                <div draggable="false" className='ml-2' >
+                    <img loading='lazy' src="https://links.papareact.com/7ma" alt="loading" draggable="false"/>
+                </div>
+            </Carousel>
+            
+        </div>
+    );
+}
+
+export default Banner;
